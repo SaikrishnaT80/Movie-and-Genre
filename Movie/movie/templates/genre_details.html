@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <table border="1px solid" style="background-color: beige;" class="table">
+            <h1><em>Genre Details</em></h1>
+            <tr>
+                <th>Genre</th>
+                <th>Description</th>
+
+            </tr>
+            <tr>
+                <td>{{qs.name}}</td>
+                <td>{{qs.description}}</td>
+            </tr>
+        </table>
+        <h2>{{qs.name}} Movies</h2>
+
+        {% for i in mo %}<br>
+
+        {{i.title}}
+
+        {% endfor %}
+
+
+
+
+    </form>
+
+</body>
+
+</html>

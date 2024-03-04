@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <table border="1px solid" style="background-color: beige;" class="table">
+            <h1><em>Movie Details</em></h1>
+            <tr>
+                <th>TITLE</th>
+                <th>LANGUAGE</th>
+                <th>RELEASE_DATE</th>
+                <th>DURATION</th>
+                <th>SUMMARY</th>
+                <th>GENRE</th>
+
+            </tr>
+            <tr>
+                <td>{{qs.title}}</td>
+                <td>{{qs.language}}</td>
+                <td>{{qs.release_date}}</td>
+                <td>{{qs.duration}}</td>
+                <td>{{qs.summary}}</td>
+                <td>{{qs.genre}}</td>
+            </tr>
+        </table>
+
+        {% for i in ge %}<br>
+
+        <b>
+            <h2>Genre of {{qs.title}} is {{i.name}}</h2>
+        </b><br>
+        <em>{{i.description}}</em><br>
+
+        {% endfor %}
+
+
+
+
+    </form>
+
+</body>
+
+</html>

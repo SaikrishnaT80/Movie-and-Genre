@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>\
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1px solid" style="background-color: beige;" class="table">
+        <h1><em>Genre Table</em></h1>
+        <form action="" method="post">
+            {%csrf_token%}
+            <input type="text" name="text">
+            <button class="btn btn-outline-success" type="submit" placeholder="Search by name of genre">Search</button>
+        </form>
+
+
+        <tr>
+            <th>NAME</th>
+            <th>DESCRIPTION</th>
+
+        </tr>
+        {% for i in qs %}
+
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.description}}</td>
+            <td><a href="{% url 'g_details' i.id %}"><button>View</button></a></td>
+            <td><a href="{% url 'g_update' i.id %}"><button>Update</button></a></td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+    
+    <a href="{% url 'g_add' %}"><button>ADD</button></a>
+    {% for i in messages %}
+    <div class="alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:">
+            <use xlink:href="#check-circle-fill" />
+        </svg>
+
+        {{i}}
+    </div>
+    {% endfor %}
+
+</body>
+
+</html>
